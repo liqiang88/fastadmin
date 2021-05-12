@@ -32,7 +32,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                             operate: 'LIKE',
                             formatter: function (value, row, index) {
                                 return [
-                                    '<a href="http://fastadmin.lh/addons/luocms?id=' + row.id + '" target="_blank">' + value + '</a>'
+                                    '<a href="http://f.runoops.com/addons/luocms?id=' + row.id + '" target="_blank">' + value + '</a>'
                                 ].join("")
                             }
                         },
