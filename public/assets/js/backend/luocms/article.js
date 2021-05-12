@@ -26,7 +26,16 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'title', title: __('Title'), operate: 'LIKE'},
+                        {
+                            field: 'title',
+                            title: __('Title'),
+                            operate: 'LIKE',
+                            formatter: function (value, row, index) {
+                                return [
+                                    '<a href="http://fastadmin.lh/addons/luocms?id=' + row.id + '" target="_blank">' + value + '</a>'
+                                ].join("")
+                            }
+                        },
                         {field: 'is_delete', title: __('Is_delete')},
                         {field: 'createtime', title: __('Createtime'), formatter: Table.api.formatter.datetime, operate: 'RANGE', addclass: 'datetimerange', autocomplete:false},
                         {field: 'updatetime', title: __('Updatetime'), formatter: Table.api.formatter.datetime, operate: 'RANGE', addclass: 'datetimerange', autocomplete:false},
